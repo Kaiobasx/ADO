@@ -9,7 +9,6 @@ public class FilaAtendimento extends Fila<Paciente> {
         } else {
             int posicao = 0;
             for (int i = 0; i < this.tamanho(); i++) {
-                // A linha 16 do seu erro estava aqui! Usando "obter(i)" o erro some.
                 if (!this.obter(i).isPreferencial()) {
                     break; 
                 }
@@ -40,7 +39,6 @@ public class FilaAtendimento extends Fila<Paciente> {
             int posNormal = buscarIndicePrimeiroNormal();
             
             if (posNormal != -1) {
-                // Outro lugar onde o "obter" salva a vida
                 Paciente pacienteNormal = this.obter(posNormal);
                 this.remove(posNormal); 
                 this.contPreferencialAtendidos = 0; 

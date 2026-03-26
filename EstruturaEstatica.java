@@ -36,8 +36,6 @@ public class EstruturaEstatica<T> {
         return true;
     }
 
-    // ---> OLHA O MÉTODO OBTER AQUI! <---
-    // Ele serve para pegar um elemento do vetor com segurança
     public T obter(int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição Inválida");

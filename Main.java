@@ -5,13 +5,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         FilaAtendimento filaLab = new FilaAtendimento();
         
-        // --- CARGA INICIAL DE PACIENTES (Para não começar do zero) ---
         filaLab.enfileira(new Paciente("Seu Carlos", true));
         filaLab.enfileira(new Paciente("Dona Maria", true));
         filaLab.enfileira(new Paciente("Joao", false));
         filaLab.enfileira(new Paciente("Ana", false));
         System.out.println(">>> Sistema iniciado. Já existem " + filaLab.getQuantidadeAguardando() + " pacientes na fila. <<<");
-        // -------------------------------------------------------------
 
         int opcao = -1;
 
@@ -39,7 +37,6 @@ public class Main {
                     String resposta = scanner.nextLine().toUpperCase();
                     boolean isPref = resposta.equals("S"); 
                     
-                    // Pega o tamanho da fila ANTES da pessoa entrar para saber quantos estão na frente
                     int pessoasNaFrente = filaLab.getQuantidadeAguardando();
                     
                     Paciente novoPaciente = new Paciente(nome, isPref);
@@ -48,7 +45,6 @@ public class Main {
                     System.out.println("\n>>> Senha gerada com sucesso! <<<");
                     System.out.println("Paciente: " + novoPaciente.toString());
                     
-                    // Aviso de quantas pessoas estão na frente!
                     if (pessoasNaFrente == 0) {
                         System.out.println("Você é o próximo a ser atendido!");
                     } else {

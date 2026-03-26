@@ -16,7 +16,7 @@ public class Fila<T> extends EstruturaEstatica<T> {
         if (this.estaVazia()) {
             return null;
         }
-        return this.obter(0); // <-- Pegando com segurança!
+        return this.obter(0);
     }
 
     public T desenfileira() {
@@ -24,7 +24,7 @@ public class Fila<T> extends EstruturaEstatica<T> {
             return null;
         }
         final int POS = 0; 
-        T elementoASerRemovido = this.obter(POS); // <-- Pegando com segurança!
+        T elementoASerRemovido = this.obter(POS);
         this.remove(POS); 
         return elementoASerRemovido;
     }
